@@ -1,0 +1,65 @@
+{
+  "name": "kitty-player", 
+  "version": "1.0.0", 
+  "description": "A simple Electron-based music player application",
+  "main": "main.js", 
+
+  "scripts": {
+    "start": "electron .", 
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir", 
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac", 
+    "build:linux": "electron-builder --linux" 
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/invisible-bo/kitty_player" 
+  },
+
+  "keywords": [
+    "Electron",
+    "Music Player", 
+    "Audio", 
+    "Desktop App", 
+    "Media Player" 
+  ],
+
+  "author": "invisible-bo", 
+  "license": "MIT", 
+
+  "devDependencies": {
+    "electron": "^34.3.0", 
+    "electron-builder": "^25.1.8", 
+    "electron-store": "^8.1.0", 
+    "electron-updater": "^6.6.0", 
+    "fs-extra": "^11.1.1"
+  },
+
+  "build": {
+    "appId": "com.bo.kittyplayer", 
+    "productName": "Kitty Player", 
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "renderer.js",
+      "assets/**/*"
+    ],
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icon.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "build/icon.png"
+    }
+  }
+}
