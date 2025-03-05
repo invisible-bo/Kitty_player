@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 
 
 
@@ -6,9 +7,9 @@
 #playlist {
   flex-grow: 1;
   list-style: none;
-  padding: 5px;
-  margin: 0;
-  max-height: 450px;
+  padding: 0px;
+  margin-left: 12px !important;
+  max-height: 433px;
   overflow-y: auto; /* 스크롤 가능하게 설정 */
   text-align: center;
   padding-right: 5px; 
@@ -22,14 +23,38 @@
   margin: 5px auto;
   padding: 10px 15px;
   max-width: 100%;
+  max-height: 100%;
+  
+  transition: background 0.3s ease-in-out;
 
   border-radius: 10px;
   cursor: pointer;
-  font-size: 18px; 
-  font-family: 'Nanum Pen Script', sans-serif;
+  font-size: 20px; 
+  font-family: "Dongle", sans-serif;
 
-  transition: background 0.3s ease-in-out;
 }
+
+.title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  text-align: center;
+  height: 50px;
+  overflow: hidden; /* 내용이 넘쳐도 박스 밖으로 안 보이게 */
+  width: 100%; /* 제목 길이에 맞춰 조정 가능 */
+  border-radius: 8px;
+  padding-top: 3px;
+
+  font-size: 13px;
+  color: white;
+  font-family: 'DotGothic16', sans-serif;
+
+}
+
+
 
 .playlist-item:hover {
   background: rgba(255, 255, 255, 0.4);
@@ -42,50 +67,40 @@
 }
 
 #playlist::-webkit-scrollbar-track {
-  background: #ffe0f0;
-  border-radius: 10px;
+  background: rgb(230, 214, 239);
+  border-radius: 7px;
 }
 
 #playlist::-webkit-scrollbar-thumb {
-  background: #ff99cc;
-  border-radius: 10px;
+  background: #D3A6E7;
+  border-radius: 7px;
 }
 
 #playlist::-webkit-scrollbar-thumb:hover {
-  background: #ff66b2;
+  background: #b07cc6;
 }
 
 
-.title {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  height: 50px;
-  overflow: hidden; /* 내용이 넘쳐도 박스 밖으로 안 보이게 */
-  width: 100%; /* 제목 길이에 맞춰 조정 가능 */
-  border-radius: 8px;
-  color: white;
-  font-family: 'Nanum Pen Script', sans-serif;
-  padding-top: 7px;
-}
+
 
 #currentSongTitle {
     display: inline-block;
     width: auto; /* 고정 너비 제거 */
     max-width: 100%;
     overflow: hidden;
-    white-space: nowrap;
+    white-space: nowrap;  /* 텍스트 줄바꿈 방지 */
     text-overflow: ellipsis;
     position: relative;
+    animation: marquee 10s linear infinite;
 }
 
 @keyframes marquee {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 
@@ -93,7 +108,7 @@
   display: inline-block;
   white-space: nowrap; /* 한 줄로 유지 */
   position: absolute;
-  animation: marquee 15s linear infinite; /* 애니메이션 적용 */
+  animation: marquee 10s linear infinite; /* 애니메이션 적용 */
 }
 
 /* 현재 재생 중인 노래 강조 스타일 */
@@ -117,6 +132,7 @@
 }
 
 
+/* 파일추가 btn*/
 #addFilesBtn {
   width: 87px;
   height: 34px;  
@@ -135,4 +151,90 @@
 #addFilesBtn:hover {
   opacity: 1; /* hover시 더 뚜렷하게 보이게 */
   transform: scale(1.1); /* 살짝 커지도록 */
+}
+
+#addFilesBtn:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease-out;
+}
+
+
+
+/* 기본 슬라이더 스타일 */
+#volumeSlider {
+  
+  width: 36%; /* 너비 조정 */
+  height: 8px; /* 슬라이더 높이 */
+  margin-left: 13px;
+
+  position: relative;
+  top: 9px; /* 원하는 만큼 아래로 이동 */
+ 
+  background: linear-gradient(to right, #ffb6c1, #ff69b4); /* 핑크톤 그라데이션 */
+  border-radius: 10px;
+  outline: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+
+  -webkit-appearance: none; /* 기본 스타일 제거 */
+  -webkit-app-region: no-drag;
+}
+
+/* 슬라이더 마우스 호버 시 */
+#volumeSlider:hover {
+  opacity: 1;
+}
+
+/* 슬라이더 막대 스타일 */
+#volumeSlider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #ffb6c1, #fb8ec4);
+  border-radius: 4px;
+}
+
+/* 슬라이더 조절 thumb 스타일 */
+#volumeSlider::-webkit-slider-thumb {
+  background: url('assets/volThumb.png') no-repeat center;
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 28px;
+  height: 28px;
+  background-size: contain;
+
+  cursor: pointer;
+  margin-top: 0px;
+  transform: translateY(-10px); 
+
+}
+
+/* 셔플btn */
+#shuffleBtn {
+  background: url("assets/shuffleBtn.png") no-repeat center;
+  width: 32px;
+  height: 32px;
+  background-size: contain; /* 이미지가 버튼 안에 꽉 차도록 설정 */
+  background-position: center;
+
+
+  position: absolute;
+  right: 16px;
+  top: 6px; 
+  padding: 8px 12px;
+ 
+ 
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#shuffleBtn:hover {
+  opacity: 1; /* hover시 더 뚜렷하게 보이게 */
+  transform: scale(1.1); /* 살짝 커지도록 */
+}
+
+#shuffleBtn:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease-out;
 }
