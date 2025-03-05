@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+
+
+/* Playlist 목록 스타일 */
+#playlist {
+  flex-grow: 1;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  max-height: 450px;
+  overflow-y: auto; /* 스크롤 가능하게 설정 */
+  text-align: center;
+  padding-right: 5px; 
+  
+}
+
+/* mp3 list 스타일 */
+.playlist-item {
+  padding: 7px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 5px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px; 
+  font-family: 'Nanum Pen Script', sans-serif;
+
+  transition: background 0.3s ease-in-out;
+}
+
+.playlist-item:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* list scrollbar */
+#playlist::-webkit-scrollbar {
+  width: 14px;
+  border-radius: 10px;
+}
+
+#playlist::-webkit-scrollbar-track {
+  background: #ffe0f0;
+  border-radius: 10px;
+}
+
+#playlist::-webkit-scrollbar-thumb {
+  background: #ff99cc;
+  border-radius: 10px;
+}
+
+#playlist::-webkit-scrollbar-thumb:hover {
+  background: #ff66b2;
+}
+
+
+.title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  height: 50px;
+  overflow: hidden; /* 내용이 넘쳐도 박스 밖으로 안 보이게 */
+  width: 100%; /* 제목 길이에 맞춰 조정 가능 */
+  border-radius: 8px;
+  color: white;
+  font-family: 'Nanum Pen Script', sans-serif;
+  padding-top: 7px;
+}
+
+#currentSongTitle {
+    display: inline-block;
+    width: auto; /* 고정 너비 제거 */
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+@keyframes marquee {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+
+.scrolling-title {
+  display: inline-block;
+  white-space: nowrap; /* 한 줄로 유지 */
+  position: absolute;
+  animation: marquee 15s linear infinite; /* 애니메이션 적용 */
+}
+
+/* 현재 재생 중인 노래 강조 스타일 */
+.current-playing {
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 5px 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  }
+}
+
+
+#addFilesBtn {
+  width: 70px;
+  height: 34px;  
+  position: absolute;
+  right: 22px; 
+  bottom: 13%;
+
+  background: url("assets/addFilesBtn.png") no-repeat center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0; /* 크기 변형 방지 */
+  position: absolute;
+}
+
+#addFilesBtn:hover {
+  opacity: 1; /* hover시 더 뚜렷하게 보이게 */
+  transform: scale(1.1); /* 살짝 커지도록 */
+}

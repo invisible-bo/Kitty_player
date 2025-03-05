@@ -5,12 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kitty player</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="texts.css">
 </head>
 <body>
+  <div class="drag-region"></div>   <!--app drag-->
+
   <section class="player-container">
     <article class="inner-square">
-      <header class="title"></header>
+
+      <header class="title">
+        <div class="scrolling-title">
+          <span id="currentSongTitle"></span>
+        </div>
+      </header>
+
       <section class="cover">
+        
         <div class="playbar">
           <input type="range" id="seekbar" min="0" value="0" step="1">
         </div>
@@ -18,29 +28,29 @@
 
       <footer class="play-controls">
         <div class="inner-container">
+          <button id="backwardbtn"></button>
           <button id="listBtn"></button>
           <div class="decoration-line decoration-line-left"></div>
           <button id="playPauseBtn"></button>
+          <button id="forwardbtn"></button>
           <div class="decoration-line decoration-line-right"></div>
+          <button id="addFilesBtn"></button>
         </div>
       </footer>
     </article>
 
+
+  <!-- 팝업 컨테이너 (LIST 버튼 클릭 시 나타남) -->
     <div id="listPopup" class="list-container">
-    
-      <button id="closePopup"></button>
-      <h2>Playlist</h2>
       <ul id="playlist">
         <!-- JS에서 MP3 목록 추가 -->
       </ul>
     </div>
+
   </section>
 
-  <!-- 팝업 컨테이너 (LIST 버튼 클릭 시 나타남) -->
 
-
-
-  <audio id="audioPlayer" src="assets/music.mp3">
-  <script src="kitty-player.js"></script>
+  <audio id="audioPlayer">
+  <script src="kittyPlayer.js"></script>
 </body>
 </html>

@@ -1,2 +1,34 @@
+# Node.js 패키지 관련
 node_modules/
-dist/
+package-lock.json
+
+# Electron 빌드 파일
+/dist/
+/out/
+electron-builder.yaml
+electron-builder.json
+electron-builder-config.json
+
+# 캐시 및 로그 파일
+*.log
+*.cache
+*.temp
+debug.log
+yarn-error.log
+npm-debug.log
+
+# 플랫폼별 빌드 파일 (Mac, Windows, Linux)
+*.exe
+*.app
+*.dmg
+*.asar
+*.db
+*.log
+*.lock
+*.bak
+
+# VS Code & OS 관련 파일
+.vscode/
+.idea/
+*.iml
+Thumbs.db
