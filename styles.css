@@ -11,9 +11,8 @@ html, body {
   }
 
 .inner-square {
-  border-radius: 15px;
-  background-color: rgba(216, 185, 234, 0.9);
-  border: 1px solid rgba(190, 119, 225, 0.9);
+  border-radius: 13px;
+  background-color: rgba(204, 184, 224, 0.9);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
   display: flex;
@@ -31,14 +30,13 @@ html, body {
 .list-container {
   position: absolute; /* player-container 기준으로 배치 */
   width: 292px;
-  height: 485px;
+  height: 485.5px;
   margin-left: 19.4px; /* 약간의 간격 추가 */
-  background: rgba(158, 123, 158, 0.9);
+  background: rgba(191, 173, 230, 0.9);
   backdrop-filter: blur(30px);
-  border-radius: 15px;
+  border-radius: 13px;
   left: calc(100% - 5px); /* 리스트가 닫힐 때 너무 멀어지지 않도록 조정 */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  border: 3px solid #c9a2e5;
 
   opacity: 0; /* 처음엔 투명 */
   transform: translateX(-15px); /* 리스트가 닫힐 때 자연스럽게 사라지도록 조정 */
@@ -75,13 +73,13 @@ html, body {
 
 
 .title {
-border-radius: 22px !important;
-background-color: rgba(199, 146, 225, 0.8);
-border: 1px solid rgba(190, 119, 225, 0.8);
+border-radius: 20px !important;
+background-color: rgba(191, 173, 230, 0.8);
+border: 1.55px solid rgba(151, 113, 231, 0.8);
 align-self: center;
 display: flex;
-width: 220px !important;
-height: 30px !important;
+width: 210px !important;
+height: 32px !important;
 }
 
 
@@ -91,7 +89,6 @@ border-radius: 18px;
 background-image: url("assets/kittyscreen.png");
 background-size: cover;
 background-position: center; 
-border: 1px solid rgba(190, 119, 225, 1);
 margin-top: 15px;
 padding: 252px 9px 9px;
 overflow: hidden;
@@ -99,19 +96,19 @@ overflow: hidden;
 
 /* cover img animation only when music playing */
 .cover.playing {
-  box-shadow: inset 0 0 100px rgba(255, 119, 255, 0.8);
+  box-shadow: inset 0 0 100px rgba(120, 200, 255, 0.8);
   animation: inner-glow 1.5s infinite alternate;
 }
 
-
 @keyframes inner-glow {
   from {
-    box-shadow: inset 0 0 7px rgba(255, 119, 255, 0.5);
+    box-shadow: inset 0 0 7px rgba(84, 45, 177, 0.5);
   }
   to {
-    box-shadow: inset 0 0 30px rgba(255, 119, 255, 1);
+    box-shadow: inset 0 0 30px rgb(40, 26, 163);
   }
 }
+
 
 
 .playbar {
@@ -137,6 +134,7 @@ cursor: pointer;
 margin: 0;  
 padding: 0;
 left: 0; 
+-webkit-app-region: no-drag; 
 }
 
 #seekbar::-webkit-slider-thumb {
@@ -151,14 +149,15 @@ cursor: pointer;
 
 position: relative;
 transition: transform 0.2s ease-out;
+-webkit-app-region: no-drag; 
 }
 
 
 
 .play-controls {
 border-radius: 19px;
-background-color: rgb(221, 146, 225);
-border: 1px solid rgba(190, 119, 225, 0.5);
+background-color: rgb(191, 173, 230);
+border: 1.5px solid rgb(160, 89, 196);
 display: flex;
 margin-top: 11px;
 width: 280px;
@@ -172,8 +171,7 @@ position: relative; /* listbtn 돌아다닌것 해결 */
 .inner-container {
 height: 83px; 
 border-radius: 19px;
-background-color: rgb(255, 208, 250);
-border: 1px solid rgba(0, 0, 0, 0.3);
+background-color: rgb(245, 218, 242);
 display: flex;
 padding: 10px 11px; /* 너무 큰 padding 줄이기 */
 align-items: center; /* 내부 요소 중앙 정렬 */
@@ -223,7 +221,7 @@ pointer-events: auto;
 
 #playPauseBtn:hover {
   opacity: 1; /* hover시 더 뚜렷하게 보이게 */
-  transform: scale(1.1)   /* 살짝 커지도록 */
+  transform: scale(1.05)   /* 살짝 커지도록 */
 }
 
 
@@ -245,7 +243,7 @@ pointer-events: auto;
 
 #listBtn:hover {
   opacity: 1; /* hover시 더 뚜렷하게 보이게 */
-  transform: scale(1.1); /* 살짝 커지도록 */
+  transform: scale(1.05); /* 살짝 커지도록 */
 }
 
 
@@ -270,7 +268,7 @@ right: 0;
 
 #backwardbtn:hover {
   opacity: 1; /* hover시 더 뚜렷하게 보이게 */
-  transform: scale(1.1)   /* 살짝 커지도록 */
+  transform: scale(1.05)   /* 살짝 커지도록 */
 }
 
 
@@ -288,7 +286,7 @@ right: 0;
 
 #forwardbtn:hover {
   opacity: 1; /* hover시 더 뚜렷하게 보이게 */
-  transform: scale(1.1)   /* 살짝 커지도록 */
+  transform: scale(1.05)   /* 살짝 커지도록 */
 }
 
 /* 드래그 가능한 영역 */

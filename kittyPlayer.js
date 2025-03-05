@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updatePopupPosition() {
         const playerRect = playerContainer.getBoundingClientRect();
-        const popupMargin = -2.5;
+        const popupMargin = -4;
 
         listPopup.style.left = `${playerRect.right + popupMargin}px`;  
         listPopup.style.top = `${playerRect.top}px`;
