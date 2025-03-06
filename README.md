@@ -52,25 +52,19 @@ brew install node
 ```
 <br>  
 
-3. install npm
+3. install npm & run dist
 ```
 npm install
-```
-<br>  
-
-
-4. run dist
-```
 npm run dist
 ```
 <br>  
 
-5.  
+4.  
 
-<small>Windows</small>
+<small>Windows</small><br>
 run `KittyPlayer Setup 1.0.0.exe` in `dist` folder
-
-<small>Mac</small>
+<br>
+<small>Mac</small><br>
 run `dist/KittyPlayer-1.0.0.dmg` in `Finder`
 drag `KittyPlayer.app` to `Applications` folder
 
