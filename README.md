@@ -45,7 +45,6 @@ git clone https://github.com/invisible-bo/Kitty_player.git
 <small>Windows</small><br>  
 [Node.js official web](https://nodejs.org/ko)  
 
----
   
 <small>Mac</small>
 ```
@@ -65,8 +64,7 @@ npm run dist
 <small>Windows</small><br>
 run `KittyPlayer Setup 1.0.0.exe` in `dist` folder  
 
----
-<small>Mac</small><br>
-run `dist/KittyPlayer-1.0.0.dmg` in `Finder`
-drag `KittyPlayer.app` to `Applications` folder  
 
+<small>Mac</small>
+run `dist/KittyPlayer-1.0.0.dmg` in `Finder`
+drag `KittyPlayer.app` to `Applications` folder 
