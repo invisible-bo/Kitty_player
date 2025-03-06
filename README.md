@@ -59,7 +59,19 @@ npm run dist
 ```
 <br>  
 
-4.  
+4. run application
+```
+npm start
+```  
+- if not working on Mac try this command and try again
+```
+npm cache clean --force
+```
+
+
+<br>
+
+5. export setup file 
 
 Windows<br>
 ```
