@@ -1,0 +1,66 @@
+![Image](https://github.com/user-attachments/assets/f02b1644-0a63-4752-a86f-edd650bad688)
+## Kitty Player
+---
+
+
+#### Introduction
+
+- Simple Mp3 player application with Hello Kitty theme
+
+---
+#### Main features
+- Add Mp3 files
+- Play/Pause
+- Previous/Next track 
+- Volume control
+- Playlist popup
+- Playlist random shuffle
+
+---
+#### Tech stacks  
+
+**Design Tool**
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+
+
+**GUI Framework**
+![Electron](https://img.shields.io/badge/electron-%2347848F.svg?style=for-the-badge&logo=electron&logoColor=white)
+
+
+**Frontend**
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)&nbsp;![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)&nbsp;![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+---
+#### How to install  
+1. clone this repository
+```
+git clone https://github.com/invisible-bo/Kitty_player.git
+```
+
+
+2. install Node.js
+###### Windows
+[Node.js official web](https://nodejs.org/ko)  
+
+  
+###### Mac
+```
+brew install node
+```
+3. install npm
+```
+npm install
+```
+
+
+4. run dist
+```
+npm run dist
+```
+
+5.  
+
+###### Windows
+run `KittyPlayer Setup 1.0.0.exe` in `dist` folder
+
+###### Mac
