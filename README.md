@@ -32,35 +32,47 @@
 
 ---
 #### How to install  
-1. clone this repository
+1. clone this repository  
+
+
 ```
 git clone https://github.com/invisible-bo/Kitty_player.git
-```
-
+```  
+<br>  
 
 2. install Node.js
-###### Windows
+ 
+<small>Windows</small>
 [Node.js official web](https://nodejs.org/ko)  
-
+<br>  
   
-###### Mac
+<small>Mac</small>
 ```
 brew install node
 ```
+<br>  
+
 3. install npm
 ```
 npm install
 ```
+<br>  
 
 
 4. run dist
 ```
 npm run dist
 ```
+<br>  
 
 5.  
 
-###### Windows
+<small>Windows</small>
 run `KittyPlayer Setup 1.0.0.exe` in `dist` folder
 
-###### Mac
+<small>Mac</small>
+run `dist/KittyPlayer-1.0.0.dmg` in `Finder`
+drag `KittyPlayer.app` to `Applications` folder
+
+ 
+
