@@ -53,7 +53,7 @@ brew install node
 ```
 <br>  
 
-3. install npm
+3. install npm (dependencies & devDependencies in `package.json` )
 ```
 npm install
 ```
