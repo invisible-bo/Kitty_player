@@ -62,10 +62,12 @@ npm run dist
 4.  
 
 Windows<br>
+
 run `KittyPlayer Setup 1.0.0.exe` in `dist` folder  
 
 
 Mac
-
+```
 run `dist/KittyPlayer-1.0.0.dmg` in `Finder`
 drag `KittyPlayer.app` to `Applications` folder 
+```
