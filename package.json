@@ -12,7 +12,7 @@
   "build": {
     "appId": "com.bo.kittyplayer",
     "productName": "KittyPlayer",
-    "copyright": "Copyright © 2024 invisible-bo",
+    "copyright": "Copyright © 2025 invisible-bo",
     "directories": {
       "output": "dist"
     },
@@ -25,12 +25,18 @@
       "styles.css",
       "texts.css"
     ],
-    
+
     "asar": false,  
     "win": {
       "target": "nsis",
       "icon": "build/icon.ico"
     },
+
+    "mac": {
+      "target": ["dmg", "zip"],  
+      "icon": "build/icon.icns"  
+    },
+
     "nsis": {
       "oneClick": false,  
       "allowToChangeInstallationDirectory": true,
