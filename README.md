@@ -55,7 +55,6 @@ brew install node
 3. install npm & run dist
 ```
 npm install
-npm run dist
 ```
 <br>  
 
@@ -72,6 +71,9 @@ npm cache clean --force
 <br>
 
 5. export setup file 
+```
+npm run dist
+```
 
 Windows<br>
 ```
