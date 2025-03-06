@@ -12,6 +12,7 @@
 - Add Mp3 files
 - Play/Pause
 - Previous/Next track 
+- Playing track search
 - Volume control
 - Playlist popup
 - Playlist random shuffle
