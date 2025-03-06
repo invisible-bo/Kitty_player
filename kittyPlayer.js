@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const listBtn = document.getElementById("listBtn");
     const listPopup = document.getElementById("listPopup");
     const playlist = document.getElementById("playlist");
+    
 
     const backwardBtn = document.getElementById("backwardbtn");
     const forwardBtn = document.getElementById("forwardbtn");
@@ -135,21 +136,26 @@ document.addEventListener("DOMContentLoaded", function () {
     // 리스트 팝업 
     listBtn.addEventListener("click", function () {
         if (listPopup.classList.contains("active")) {
-            listPopup.classList.remove("active");
+            // 닫힐 때 애니메이션 추가
+            listPopup.classList.add("closing");
+    
             setTimeout(() => {
+                listPopup.classList.remove("active", "closing"); // 애니메이션 후 제거
                 listPopup.style.visibility = "hidden";
                 listPopup.style.pointerEvents = "none";
-            }, 300);
-
-            window.electronAPI.resizeWindow(331, 500);
+    
+                window.electronAPI.resizeWindow(331, 500); // 
+            }, 400); // CSS 0.4s랑 맞춤
         } else {
+            // 열릴 때
             listPopup.style.visibility = "visible";
             listPopup.style.pointerEvents = "auto";
             listPopup.classList.add("active");
-
-            window.electronAPI.resizeWindow(629, 500); //팝업될때는 윈도우창 크기 넓게
+    
+            window.electronAPI.resizeWindow(629, 500); // 팝업 열릴 때 창 크기 변경
         }
     });
+    
 
     // 이전 곡 재생
     backwardBtn.addEventListener("click", () => {
