@@ -223,8 +223,8 @@
   width: 33%;
   height: 12px;
   border-radius: 3px;
-  margin-top: 15px;
-  right: -183px;
+  margin-top: 27px;
+  left: 11px;
 
   background: linear-gradient(90deg, #CBA4F5, #FFB2E6, #FFFFFF);
   box-shadow: 0px 0px 8px rgba(203, 164, 245, 0.8); /* 은은한 퍼플 글로우 */
@@ -263,13 +263,13 @@
 
 
   position: absolute;
-  left: 16px;
-  top: 6px; 
+  right: 9px;
+  top: 17px; 
   padding: 8px 12px;
  
  
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -279,6 +279,38 @@
 }
 
 #shuffleBtn:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease-out;
+}
+
+#closeBtn {
+  background: url("assets/closeBtn.png") no-repeat center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-size: contain; /* 이미지가 버튼 안에 꽉 차도록 설정 */
+  background-position: center;
+
+  top: 17px; 
+  right: -12px;
+  padding: 8px 8px;
+
+
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+
+  z-index: 9999;
+  -webkit-appearance: none;
+  -webkit-app-region: no-drag;
+}
+
+#closeBtn:hover {
+  opacity: 1; /* hover시 더 뚜렷하게 보이게 */
+  transform: scale(1.1); /* 살짝 커지도록 */
+}
+
+#closeBtn:active {
   transform: scale(0.95);
   transition: transform 0.1s ease-out;
 }

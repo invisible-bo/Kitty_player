@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const listPopup = document.getElementById("listPopup");
     const playlist = document.getElementById("playlist");
     
-
+    const closeBtn = document.getElementById("closeBtn");
     const backwardBtn = document.getElementById("backwardbtn");
     const forwardBtn = document.getElementById("forwardbtn");
 
@@ -24,6 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let originalMp3Files = []; // 원본 MP3 파일 리스트 (셔플 해제 시 원래 순서 복원용)
     let currentSongIndex = 0;
     let isShuffled = false;
+
+
+    // 창 닫기 버튼 이벤트 
+    closeBtn.addEventListener("click", () => {
+        window.electronAPI.closeApp(); // Electron의 main.js에 창 닫기 요청
+    });
 
     // 볼륨 조절 슬라이더 설정
     volumeSlider.type = "range";

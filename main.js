@@ -18,20 +18,27 @@ function createWindow() {
         resizable: false,
         transparent: true,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
+            preload: path.join(app.getAppPath(), 'preload.js'), // ✅ 빌드 후 경로 문제 해결
             contextIsolation: true,
             enableRemoteModule: false,
             sandbox: false
         }
     });
 
-    mainWindow.loadFile('index.html');
+    mainWindow.loadFile(path.join(app.getAppPath(), 'index.html'));
 }
+
+// 🔥 창 닫기 이벤트 추가
+ipcMain.on("close-app", () => {
+    const win = BrowserWindow.getFocusedWindow();
+    if (win) {
+        win.close();
+    }
+});
 
 // 배열을 랜덤하게 섞는 함수 (Fisher-Yates 알고리즘)
 function shuffleArray(array) {
     if (!Array.isArray(array) || array.length === 0) return array;
-
     let shuffled = [...array]; // 원본 보호
     for (let i = shuffled.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -53,7 +60,6 @@ ipcMain.handle("open-file-dialog", async () => {
         savePlaylist(originalPlaylist); // JSON 저장
     }
 
-
     return result.filePaths;
 });
 
@@ -69,46 +75,47 @@ ipcMain.handle("get-mp3-files", async () => {
 
         return originalPlaylist;
     } catch (error) {
-
         return [];
     }
 });
 
 ipcMain.handle("shuffle-playlist", async (_, playlist) => {
+    if (!playlist || !Array.isArray(playlist) || playlist.length === 0) {
+        return [];
+    }
 
-
-  if (!playlist || !Array.isArray(playlist) || playlist.length === 0) {
-      console.error("리스트가 비어 있음 원본 반환");
-      return [];
-  }
-
-  let shuffledPlaylist = shuffleArray([...playlist]);
-  return shuffledPlaylist;
+    return shuffleArray([...playlist]);
 });
-
 
 // 변경된 플레이리스트 저장
 function savePlaylist(playlist) {
     try {
         fs.writeFileSync(playlistFilePath, JSON.stringify(playlist, null, 2), "utf-8");
-
-    } catch (error) {
-        console.error("⚠ 플레이리스트 저장 중 오류 발생:", error);
-    }
+    } catch (error) {}
 }
 
-// 창 크기 조정
+// 창 크기 조정 (위치 변경 없이 크기만 변경)
 ipcMain.on("resize-window", (event, width, height) => {
     const win = BrowserWindow.getFocusedWindow();
     if (win) {
-        win.setBounds({ width: width, height: height, x: win.getBounds().x, y: win.getBounds().y });
+        let bounds = win.getBounds(); // 현재 창의 위치 가져오기
+        win.setBounds({ 
+            width: width, 
+            height: height, 
+            x: bounds.x, 
+            y: bounds.y 
+        }); // 위치 유지하면서 크기만 변경
     }
 });
-
 // 앱이 준비되면 창을 생성
 app.whenReady()
     .then(createWindow)
-    .catch(error => console.error("⚠ 앱 시작 중 오류 발생:", error));
+    .catch(error => {});
+
+// macOS에서 창이 닫히면 다시 열 수 있도록 설정
+app.on("activate", () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+});
 
 // 창이 닫히면 앱 종료 (Mac 제외)
 app.on('window-all-closed', function () {
