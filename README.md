@@ -42,7 +42,7 @@ git clone https://github.com/invisible-bo/Kitty_player.git
 
 2. install Node.js
  
-<small>Windows</small>
+<small>Windows</small><br>  
 [Node.js official web](https://nodejs.org/ko)  
 <br>  
   
