@@ -53,7 +53,7 @@ brew install node
 ```
 <br>  
 
-3. install npm & run dist
+3. install npm
 ```
 npm install
 ```
