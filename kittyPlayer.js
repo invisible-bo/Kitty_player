@@ -110,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     
         isShuffled = !isShuffled;
-        console.log(`🎵 셔플 상태 변경: ${isShuffled}`);
     
         try {
             const updatedPlaylist = await window.electronAPI.shufflePlaylist(mp3Files); // MP3 리스트 전달
@@ -133,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
     
     
-
     // 리스트 팝업 
     listBtn.addEventListener("click", function () {
         if (listPopup.classList.contains("active")) {
