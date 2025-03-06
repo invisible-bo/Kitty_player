@@ -62,7 +62,7 @@ npm install
 ```
 npm start
 ```  
-- if not working on Mac try this command and try again
+- if not working on Mac try this command and `npm start` again
 ```
 npm cache clean --force
 ```
