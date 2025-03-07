@@ -8,7 +8,6 @@
     "dist": "electron-builder",
     "pack": "electron-builder --dir"
   },
-
   "build": {
     "appId": "com.bo.kittyplayer",
     "productName": "KittyPlayer",
@@ -23,31 +22,36 @@
       "kittyPlayer.js",
       "assets/**/*",
       "styles.css",
-      "texts.css"
+      "texts.css",
+      "node_modules/**/*",
+      "package.json"
     ],
-
-    "asar": false,  
+    "asar": true,
     "win": {
-      "target": "nsis",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64", "ia32"]
+        }
+      ],
       "icon": "build/icon.ico"
     },
-
     "mac": {
-      "target": ["dmg", "zip"],  
-      "icon": "build/icon.icns"  
+      "target": ["dmg", "zip"],
+      "icon": "build/icon.icns"
     },
-
     "nsis": {
-      "oneClick": false,  
+      "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "shortcutName": "KittyPlayer"
     }
   },
-
+  "dependencies": {
+  },
   "devDependencies": {
-    "electron": "^34.3.0",  
+    "electron": "^34.3.1",
     "electron-builder": "^25.1.8"
   }
 }
