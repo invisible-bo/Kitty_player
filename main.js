@@ -18,7 +18,7 @@ function createWindow() {
         resizable: false,
         transparent: true,
         webPreferences: {
-            preload: path.join(app.getAppPath(), 'preload.js'), // ✅ 빌드 후 경로 문제 해결
+            preload: path.join(app.getAppPath(), 'preload.js'), // 빌드 후 경로 문제 해결
             contextIsolation: true,
             enableRemoteModule: false,
             sandbox: false

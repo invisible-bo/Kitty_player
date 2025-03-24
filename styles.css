@@ -23,7 +23,7 @@ html, body {
   }
 
   button {
-  -webkit-app-region: no-drag; /* 버튼 드래그 제외 */
+  -webkit-app-region: no-drag; 
 }  
 
 
@@ -51,21 +51,18 @@ overflow: hidden;
 
 /* cover img animation only when music playing */
 .cover.playing {
-  box-shadow: inset 0 0 100px rgba(120, 200, 255, 0.8);   /* 안쪽에서 퍼지는 빛 효과 */
-
-  /* inner-glow 애니메이션을 1.5초 동안 실행하고, 
-     alternate 옵션으로 from → to → from 반복 */
-  animation: inner-glow 1.3s infinite alternate; /* ?초 동안 반복해서 빛이 강약 조절됨 */
+  box-shadow: inset 0 0 100px rgba(120, 200, 255, 0.8);   
+  animation: inner-glow 1.3s infinite alternate; 
 }
 
 /* inner-glow 애니메이션 */
 @keyframes inner-glow {
   from {
-    /* inset 안쪽 그림자, 0 0 → X, Y 이동 값이 0 그림자가 중심에서 퍼짐, 50px blur 정도 */
+
     box-shadow: inset 0 0 7px rgba(84, 45, 177, 0.5);
   }
   to {
-    /* 애니메이션 끝날 때 효과 */
+
     box-shadow: inset 0 0 50px rgb(40, 26, 163);
   }
 }
