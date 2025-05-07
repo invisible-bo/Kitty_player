@@ -86,3 +86,7 @@ Mac
 # run dist/KittyPlayer-1.0.0.dmg in Finder
 # drag KittyPlayer.app to Applications folder 
 ```
+
+---
+trouble shooting
+https://www.notion.so/welcome-to-subin/1abbcffca32780b5aae3e09cc9a6e728?v=1abbcffca327810598a3000c0859424e
